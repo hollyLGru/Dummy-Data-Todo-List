@@ -10,7 +10,7 @@
     {
         "userId": 20,
         "id": 2,
-        "title": "delectus aut autem dgsdgsdg",
+        "title": "delectus aut autem",
         "completed": false
     }]
     
@@ -33,10 +33,14 @@
     
     const populateTodos = () =>  { 
         const olElement = document.getElementById("todo-list")
-        let olItem = document.createElement("li")
-        let textNode = document.createTextNode(arrayOfTodos[0].title)
-        olItem.append(textNode)
-        olElement.appendChild(olItem)
+        
+        for (let i = 0; i < arrayOfTodos.length -1; i++) {
+            
+            let olItem = document.createElement("li")
+            let textNode = document.createTextNode(arrayOfTodos[i].title)
+            olItem.append(textNode)
+            olElement.appendChild(olItem)
+          }
         }
     
 
