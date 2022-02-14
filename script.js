@@ -10,7 +10,7 @@
     {
         "userId": 20,
         "id": 2,
-        "title": "delectus aut autem",
+        "title": "delectus aut autem dgsdgsdg",
         "completed": false
     }]
     
@@ -19,35 +19,26 @@
     const fetchTodos = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
         .then( (response) => response.json())
-        .then( (json) => arrayOfTodos = json)
+        .then( (data) => arrayOfTodos = data)
     }
     
     
     
 
     const logTodos = () => {
-        console.log(arrayOfTodos);
         console.log(arrayOfTodos[0].title);
-        let list = document.getElementById("todo-list")
-        let listItemCreation = document.createElement("li")
-        // console.log(listItemCreation)
-        const textNode = document.createTextNode(arrayOfTodos[i].title)
-        // console.log(textNode)
-        listItemCreation.appendChild(textNode)
-        list.appendChild(listItemCreation)
+        
+    
     }
     
     const populateTodos = () =>  { 
-        for (i = 0; i < arrayOfTodos.length; i++) {
-        let list = document.getElementById("todo-list")
-        let listItemCreation = document.createElement("li")
-        // console.log(listItemCreation)
-        const textNode = document.createTextNode(arrayOfTodos[i].title)
-        // console.log(textNode)
-        listItemCreation.appendChild(textNode)
-        list.appendChild(listItemCreation)
+        const olElement = document.getElementById("todo-list")
+        let olItem = document.createElement("li")
+        let textNode = document.createTextNode(arrayOfTodos[0].title)
+        olItem.append(textNode)
+        olElement.appendChild(olItem)
         }
-    }
+    
 
     // console.log(arrayOfTodos[0].userId) // => 14
     // console.log(arrayOfTodos[1].userId) // => 20
