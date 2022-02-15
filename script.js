@@ -35,6 +35,15 @@
             olElement.appendChild(olItem)
           }
         }
+
+        const clearAllTodos = () => {
+            let clearIt = document.getElementById("todo-list").innerHTML = "";
+        }
+
+        // const completeTodos = () => {
+        //     clearAllTodos()
+        //     let userInput = document.getElementById("todo-list")
+        // } still working on this!!!! 44 is correct. 
     
 
     // console.log(arrayOfTodos[0].userId) // => 14

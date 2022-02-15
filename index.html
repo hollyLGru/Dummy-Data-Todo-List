@@ -10,8 +10,23 @@
 </head>
 <body>
     <button onclick="fetchTodos()">Fetch Todos</button>
+    <br>
     <button onclick="logTodos()">Log Todos</button>
+    <br>
     <button onclick="populateTodos()">Populate Todos</button>
+    <br>
+    <form>
+        <label for="userid">UserID</label>
+        <input type="number" min="1" max="10" name="userId" id="userNum">
+    </form>
+    <br>
+    <button onclick="completeTodos()">Complete Todos</button>
+    <br>
+    <button onclick="incompleteTodos()">Incomplete Todos</button>
+    <br>
+    <button onclick="clearAllTodos()">Clear All Todos</button>
+    <br>
+
     <ol id="todo-list">
     <!-- LIs will go here -->
     </ol>
