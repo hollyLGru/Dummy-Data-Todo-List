@@ -13,22 +13,15 @@
         "title": "delectus aut autem",
         "completed": false
     }]
-    
-    
 
     const fetchTodos = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
         .then( (response) => response.json())
         .then( (data) => arrayOfTodos = data)
     }
-    
-    
-    
 
     const logTodos = () => {
         console.log(arrayOfTodos[0].title);
-        
-    
     }
     
     const populateTodos = () =>  { 
