@@ -37,14 +37,51 @@
         }
 
         const clearAllTodos = () => {
-            let clearIt = document.getElementById("todo-list").innerHTML = "";
+            document.getElementById("todo-list").innerHTML = "";
         }
 
-        // const completeTodos = () => {
-        //     clearAllTodos()
-        //     let userInput = document.getElementById("todo-list")
-        // } still working on this!!!! 44 is correct. 
-    
+        const filteredArray = [];
 
-    // console.log(arrayOfTodos[0].userId) // => 14
-    // console.log(arrayOfTodos[1].userId) // => 20
+        
+
+        const filterById = (id) => {
+            clearAllTodos(); 
+            console.log(id);
+            const olElement = document.getElementById("todo-list")
+            const filteredToDos = arrayOfTodos.filter((toDo) => toDo.userId == id);
+            for (let i = 0; i < filteredToDos.length -1; i++) { 
+                let olItem = document.createElement("li")
+                let textNode = document.createTextNode(filteredToDos[i].title)
+                olItem.append(textNode)
+                olElement.appendChild(olItem)
+                filteredArray.push(filteredToDos[i])
+          }
+        }
+
+        const completeTodos = () => {
+            clearAllTodos(); 
+            const filtercompleted = filteredArray.filter((toDo) => toDo.completed == true)
+            console.log(filtercompleted)
+            const olElement = document.getElementById("todo-list")
+            for (let i = 0; i < filtercompleted.length -1; i++) { 
+                let olItem = document.createElement("li")
+                let textNode = document.createTextNode(filtercompleted[i].title)
+                olItem.append(textNode)
+                olElement.appendChild(olItem)
+                // filteredArray.push(filteredToDos[i])
+          }
+        }
+        
+        const incompleteTodos = () => {
+            clearAllTodos(); 
+            const filtercompleted = filteredArray.filter((toDo) => toDo.completed == false)
+            console.log(filtercompleted)
+            const olElement = document.getElementById("todo-list")
+            for (let i = 0; i < filtercompleted.length -1; i++) { 
+                let olItem = document.createElement("li")
+                let textNode = document.createTextNode(filtercompleted[i].title)
+                olItem.append(textNode)
+                olElement.appendChild(olItem)
+                // filteredArray.push(filteredToDos[i])
+          }
+        }
